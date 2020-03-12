@@ -9,8 +9,19 @@
 %\newcommand{\ezdc}{$E_{\rm ZDC}$}
 %\newcommand{\red}{\textcolor{red}}
 %\newcommand{\blue}{\textcolor{blue}}
-\newcommand{\slfrac}[2]{\left.#1\right/#2}
+
 \usepackage{rotating}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[stable]{footmisc} % suppress footnotes in table of contents
+
+\newcommand{\slfrac}[2]{\left.#1\right/#2}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\fsl}[1]{\ensuremath{\mathrlap{\!\not{\phantom{#1}}}#1}}
+\newcommand{\lbr}{\lbrace}
+\newcommand{\rbr}{\rbrace}
+
 %
 \begin{document}%
 %%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +53,8 @@ Here goes your abstract
 \newpage
 
 \include{Sections/Introduction}
-
+\include{Sections/DataAnalysis}
+\include{Sections/Results}
 
 
 \bibliographystyle{unsrt}  

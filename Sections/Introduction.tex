@@ -1,0 +1,63 @@
+\section{Introduction\footnote{The introduction is mostly based on \cite{ChiSym} with other references used where cited.}}
+\label{sec:Introduction}
+
+why is a1 interesting? --> short intro in QCD, chiral symmetry of QCD and chiral partners
+broadening and mass degeneracy in QGP, ...
+\subsection{QCD}
+
+fields in qcd,..., alphaS --> can't do perturbative calculations at low energies 
+
+\subsection{Chiral Symmetry of QCD}
+We start from the complete Lagrangian of QCD with 2 flavours
+\begin{equation}
+\Lag_{QCD} = \bar{\psi}_i \left( i\gamma_{\mu} D^{\mu} - m \right)_{ij} \psi_j - \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a
+\end{equation}
+where $\psi = \left( u,d \right)$ are the quark fields, $D^{\mu} = \partial^{\mu} -igA^{\mu}$ is the covariant derivative in the fundamental representation and $G_{\mu\nu}^a = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu} + g f^{abc} A_{\mu}^b A_{\nu}^c$ is the field strength of the gluon fields $A_{\mu}^a$ with the structure constants $f^{abc}$ of SU(3).
+Of particular interest of us for the chiral symmetry is the quark term in the above Lagrangian which can be split into two parts
+\begin{equation}
+\Lag_{\mathrm{quarks}} = \bar{\psi} i\gamma_{\mu} D^{\mu} \psi - m \bar{\psi} \psi \equiv \Lag + \delta\Lag
+\end{equation}
+The suggestive names will make sense in a second. 
+Since the doublet of quark fields in $\Lag$ are contracted in a scalar product the Lagrangian is invariant under an inner symmetry which is in this case a U(2) symmetry. We only consider the SU(2) part of both of the symmetry groups, since $U(1)_V$ can be identified with bayron number conservation and $U(1)_A$ can be shown to be anomalous, so it is not a real symmetry of our theory. Let us consider the following SU(2) transformations
+\begin{align}
+& U_V = \exp \left(-i \alpha^i \frac{\sigma^i}{2} \right) \approx 1 - i\alpha^i \frac{\sigma^i}{2} & \\
+& U_A = \exp \left(-i \gamma_5 \alpha^i \frac{\sigma^i}{2} \right) \approx 1 - i \gamma_5 \alpha^i \frac{\sigma^i}{2} &
+\end{align}
+of the quark fields and their action on $\Lag$
+\begin{equation}
+\Lag = i \psi^{\dagger} \gamma_0 \gamma^{\mu} D_{\mu} \psi \overset{U_V}{\longrightarrow} i \left( U_V \psi \right)^{\dagger} \gamma_0 \gamma^{\mu} D_{\mu} U_V \psi = i \psi^{\dagger} e^{+i \alpha^i \frac{\sigma^i}{2}} \gamma_0 \gamma^{\mu} D_{\mu} e^{-i \alpha^i \frac{\sigma^i}{2}} \psi = i \bar{\psi} \fsl{D} \psi
+\end{equation}
+and
+\begin{equation}
+\Lag = i \psi^{\dagger} \gamma_0 \gamma^{\mu} D_{\mu} \psi \overset{U_A}{\longrightarrow} i \left( U_A \psi \right)^{\dagger} \gamma_0 \gamma^{\mu} D_{\mu} U_A \psi = i \psi^{\dagger} e^{+i \alpha^i \gamma_5 \frac{\sigma^i}{2}} \gamma_0 \gamma^{\mu} D_{\mu} e^{-i \gamma_5 \alpha^i \frac{\sigma^i}{2}} \psi = i \bar{\psi} \fsl{D} \psi
+\end{equation}
+where we used $\lbr \gamma^{\mu},\gamma_5 \rbr = 0 = \left[ D^{\mu},\gamma_5 \right]$ and $\gamma_5^{\dagger} = \gamma_5$.
+So $\Lag$ is invariant under both $U_V$ and $U_A$.
+The corresponding currents are
+\begin{align*}
+\label{eqn:currents}
+& j_{\mu}^i = \bar{\psi} \gamma_{\mu} \frac{\sigma^i}{2} \psi & \\
+& j_{5\mu}^i = \bar{\psi} \gamma_{\mu} \gamma_5 \frac{\sigma^i}{2} \psi & \\
+\end{align*}
+Now we can check the effect of the transformations on $\delta \Lag$
+\begin{equation}
+\delta \Lag = - m \psi^{\dagger}\gamma^0 \psi \overset{U_V}{\longrightarrow} - m \left( U_V \psi \right)^{\dagger}\gamma^0 U_V \psi = - m \psi^{\dagger} e^{+i\alpha^i \frac{\sigma^i}{2}} \gamma^0 e^{-i\alpha^i \frac{\sigma^i}{2}} \psi = - m \bar{\psi} \psi
+\end{equation}
+and 
+\begin{equation}
+\delta \Lag = - m \psi^{\dagger}\gamma^0 \psi \overset{U_A}{\longrightarrow} - m \left( U_A \psi \right)^{\dagger}\gamma^0 U_A \psi = - m \psi^{\dagger} e^{+i \gamma_5 \alpha^i  \frac{\sigma^i}{2}} \gamma^0 e^{-i \gamma_5 \alpha^i \frac{\sigma^i}{2}} \psi = - m e^{2i \gamma_5 \alpha^i \frac{\sigma^i}{2}} \bar{\psi} \psi \neq \delta \Lag
+\end{equation}
+where we used the same identities as above. We see that the mass term is not invariant under axial transformations while it is left invariant by vector transformations. The axial symmetry is therefore explicitly broken by the quark mass term. But as long as the quark masses are smaller than the scale our theory we can still use the theory as an approximate symmetry. This is indeed the case, since $m_u,m_d \sim O(5 \ \mathrm{MeV}) \ll \Lambda_{QCD} \simeq 200 \ \mathrm{MeV}$.
+
+\subsection{Mesons and their transformation properties under chiral transformations}
+Let us now have a look at the particle spectrum the strong interaction and try to match them to the conserved currents \ref{eqn:currents} and the corresponding symmetries we found earlier. We do this by combining the quark fields such that they have the same quantum numbers and Lorentz transformation properties as the mesons. We find
+\begin{align*}
+& \mathrm{pion-like \ state:} \ \vec{\pi} \equiv i \bar{\psi} \frac{\vec{\sigma}}{2}\gamma_5 \psi; \qquad \mathrm{sigma-like \ state:} \ \sigma \equiv \bar{\psi}\psi & \\
+&\mathrm{rho-like \ state:} \ \vec{\rho}_{\mu} \equiv \bar{\psi} \frac{\vec{\sigma}}{2}\gamma_{\mu} \psi; \qquad a_1\mathrm{-like \ state:} \ \vec{a}_{1 \mu} \equiv \bar{\psi} \frac{\sigma}{2}\gamma_{\mu}\gamma_5 \psi &
+\end{align*}
+
+We also see that \cite{ChiPart}
+\begin{equation}
+Uj = j
+\end{equation}
+
