@@ -106,7 +106,7 @@ which would be invariant if the vacuum was invariant: $U_A | 0 \rangle = e^{-i \
 We can now interpret the three spin-0 particles $\vec{\pi}$ from above as the Goldstone bosons of the spontaneously broken $SU(2)_A$. If $U(1)_A$ wasn't anomalous, we could identify the $\sigma$ as its Goldstone boson, which in the case of three flavours can be identified with the $\eta'$. \\
 We could now turn on the usual machinery for spontaneously broken symmetries and construct the effective Lagrangian of the pions. But since we don't do any original calculations in this paper, let us skip that and look at some implications of the spontaneous symmetry breaking and the possible return of the symmetry. Especially in the for the vector mesons whose field configurations correspond to the conserved currents.
 
-\subsection{Effects of Hot and Dense Matter on Chiral Symmetry}
+\subsection{Effects of Hot Matter on Chiral Symmetry}
 In this section I want to discuss the possible effects of hot and dense matter -- like a QGP -- on observables. In our case only the temperature dependence is interesting, since the ALICE experiment operates at zero baryon chemical potential. The QGP in ALICE is created by depositing as much energy as possible in a small spatial volume and then hoping to reach a temperature $T > T_c$. \\
 Let us start with the discussion of the order parameter of chiral symmetry which we just defined in eqn. \ref{eqn:vev}. Gerber and Leutwyler showed that up to 3-loop order the temperature dependence of $\langle \bar{\psi} \psi \rangle$ for $T < T_c$ and massless quarks is given by \cite{OrdPar3loop}
 \begin{equation}
@@ -125,36 +125,45 @@ This of course has consequences on the things we discussed earlier. \\
 Let us define the following correlators
 \begin{equation}
 \label{eqn:corV}
-\Pi_{\mu\nu}^{VV} (q) = i \int d^4x e^{iq \cdot x} \langle 0 | \mathcal{T} j^V_{\mu}(x)j^V_{\nu}(0) | 0 \rangle = \left( -g_{\mu\nu} + q_{\mu}q_{\nu} \right) \Pi_V(q^2)
+\Pi_{\mu\nu}^{VV} (q) = i \int d^4x e^{iq \cdot x} \langle 0 | \mathcal{T} j^V_{\mu}(x)j^V_{\nu}(0) | 0 \rangle = \left( -q^2 g_{\mu\nu} + q_{\mu}q_{\nu} \right) \Pi_V(q^2)
 \end{equation}
 and
 \begin{equation}
 \label{eqn:corA}
-\Pi_{\mu\nu}^{AA} (q) = i \int d^4x e^{iq \cdot x} \langle 0 | \mathcal{T} j^A_{\mu}(x)j^A_{\nu}(0) | 0 \rangle = \left( -g_{\mu\nu} + q_{\mu}q_{\nu} \right) \Pi_A(q^2)
+\Pi_{\mu\nu}^{AA} (q) = i \int d^4x e^{iq \cdot x} \langle 0 | \mathcal{T} j^A_{\mu}(x)j^A_{\nu}(0) | 0 \rangle = -g_{\mu\nu} \Pi_{A2}(q^2) + q_{\mu}q_{\nu} \Pi_A(q^2)
 \end{equation}
-Then if we assume that chiral symmetry is a symmetry of our theory and by exploiting the corresponding Ward identities and current algebra, it can be shown that \cite{WeinbergAVmixing}
+Then if we assume that chiral symmetry is a symmetry of our theory and by exploiting the corresponding Ward identities and current algebra, it can be shown that \cite{WeinbergAVmixing}\footnote{Notice that I use a slightly different notation here. I use the Fourier transform of what Weinberg uses in his paper to make it easier to compare the results to experimental findings. Additionally, Weinberg chooses the normalization of his spectral function differently, i.e. his term before the spectral function is $\left( -g_{\mu\nu} + \frac{q_{\mu}q_{\nu}}{q^2} \right)$ whereas mine is $\left( -q^2 g_{\mu\nu} + q_{\mu}q_{\nu} \right)$ this gives an additional factor of s in the integral when we switch from his notation to the notation here.}
 \begin{equation}
-\int_0^{\infty} ds \frac{1}{\pi} \lbr \Ima\Pi_V(s) - \Ima\Pi_A(s) \rbr = 2f_{\pi}^2
+\int\limits_0^{\infty} ds \frac{1}{\pi} \lbr \Ima\Pi_V(s) - \Ima\Pi_A(s) \rbr = f_{\pi}^2
 \end{equation} 
 With the well-known Gell-Mann-Oakes-Renner relation $m_{\pi}^2f_{\pi}^2 = - 2 m_q \langle \psi \bar{\psi} \rangle$ we can write this as
 \begin{equation}
 \label{eqn:WSRGOR}
-\int_0^{\infty} ds \frac{1}{\pi} \lbr \Ima\Pi_V(s) - \Ima\Pi_A(s) \rbr = - \frac{m_q}{m_{\pi}^2} \langle \psi \bar{\psi} \rangle
+\int\limits_0^{\infty} ds \frac{1}{\pi} \lbr \Ima\Pi_V(s) - \Ima\Pi_A(s) \rbr = - 2 \frac{m_q}{m_{\pi}^2} \langle \psi \bar{\psi} \rangle
 \end{equation}
 We can discuss two limits here. In the chiral limit where $m_q \rightarrow 0$ we obtain zero on the right-hand side. So, in the chiral limit the correlators seem to be equal to each other. \\
 The other limit we can discuss is inserting eqn. \ref{eqn:vevT} into \ref{eqn:WSRGOR} (or following the lattice QCD calculations for which $\langle \bar{\psi} \psi \rangle \overset{T \rightarrow \infty}{\longrightarrow} 0$) which suggests that the correlators coincide at high temperatures. 
-But this approach is to naive since eqn. \ref{eqn:WSRGOR} was derived at zero temperature. \\
+But this approach is too naive since eqn. \ref{eqn:WSRGOR} was derived at zero temperature. \\
 A more careful analysis of the problem shows that \cite{DeyAVmixing}
 \begin{equation}
-\Pi_{V,A}(q) = (1-\epsilon) \Pi_{V,A}(q) + \epsilon \Pi_{A,V}(q)
+\Pi_{V,A}(q,T) = (1-\epsilon) \Pi_{V,A}(q,0) + \epsilon \Pi_{A,V}(q,0)
 \end{equation}
-with the mixing parameter $\epsilon = \frac{T^2}{6f_{\pi}^2}$. This shows ........................ \\
+with the mixing parameter $\epsilon = \frac{T^2}{6f_{\pi}^2}$. At a finite temperature the correlators are not equal to each other but mix proportional to the square of the temperature. \\
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.85\textwidth]{Figures/SpectralFunctions}
+	\caption{ On the left, the spectral functions in the axial and vector channel are shown which were extracted from hadronic $\tau$ decay data \cite{ALEPHplot} including model fits supplemented by perturbative continua \cite{RappPlot}. On the right, the two possible scenarios are shown, namely resonance melting and the dropping mass scenario \cite{RappChiRes}.}
+	\label{fig:SpecFun}
+\end{figure}
 One other interesting result Weinberg \cite{WeinbergAVmixing} found by pulling through his arguments is the relation $m_{a_1} = \sqrt{2}m_{\rho}$ which is in good agreement with experiment. This is not really a surprise, since we expect the $a_1$ and the $\rho$ as resonances in the correlators in eqn. \ref{eqn:corA} and \ref{eqn:corV}. If the correlators are equal to each other or at least mix under a (partially) restored chiral symmetry, so should also the resonances, i.e. the $a_1$ and the $\rho$. \\
-This has been further investigated and there are two scenarios which are deemed most realistic: broadening of the resonances or a shift of the resonances towards each other. (explain both shortly and show figure from Rapp (cite Rapp for discussion of scenarios or Aspects of Chiral Symmetry and references therein)).
-
-
-
-
-
-
-CERES experiment \cite{CERESrho} and NA60 experiment \cite{NA60rho} reported broadening scenario for $\rho$.
+There have been a lot of theoretical investigations which cover a lot of different outcomes depending on the model. There are the following possibilities \cite{ChiSym}
+\begin{itemize}
+\item[1.] The Weinberg sum rules imply the equality or at least the mixing of the axial and vector spectral functions if chiral symmetry is restored. This means that the spectral functions have a single peak at a single mass which could have basically any value. Chiral models prefer a value somewhere between the vacuum masses. If the spectral functions only mix there should be two resonances in the spectral functions with equal amplitude.
+\item[2.] The other scenario would be the melting of the resonances because of the thermal broadening of the mesons in the thermalized medium -- the QGP. This effect might be enhanced by the deconfinement which is expected to take place in a QGP along with chiral symmetry restoration. The both effects would melt the resonances.
+\end{itemize}
+Both scenarios are shown in fig. \ref{fig:SpecFun} alongside experimental data of the vacuum vector and axial spectral functions measured in hadronic $\tau$ decays. \\
+The scenarios have also been investigated experimentally. Both the CERES experiment \cite{CERESrho} and the NA60 experiment \cite{NA60rho} reported that the broadening scenario for the $\rho$ is more consistent with their data. They used $\rho$ mesons decaying into dileptons which is a very clean probe since dileptons can be identified very precisely with a spectrometer. The spectral functions can also be theoretically related to the differential dilepton yield \cite{RappChiRes}
+\begin{equation}
+\frac{dN_{ll}}{d^4xd^4q} = -\frac{\alpha_{\mathrm{em}}^2}{\pi^3M^2} f^B(q_0;T)\frac{1}{3} g_{\mu\nu} \Ima \Pi^{\mu\nu}_{\mathrm{em}}(M,q;\mu_B,T)
+\end{equation}
+making dileptons a very interesting probe for vector mesons in the vacuum but also in strongly interacting media. 
