@@ -1,12 +1,154 @@
 \section{Data Analysis}
 \label{sec:Analysis}
+\subsection{Analysis Strategy}
+\begin{table}[b]
+\centering{
+\begin{tabular}{@{} rcl @{}}
+  \toprule
+  Particle & Decay Mode & Branching Ratio \\ \midrule
+  $a_1$ & \qquad \qquad \qquad \qquad $\pi^{0}\gamma$ \qquad \qquad \qquad \qquad & $(0.15 \pm 0.07)$\% \\ 
+  $a_1$ & \qquad \qquad $\pi^0\pi^{+}\pi^{-}$ \qquad \qquad & seen, BR not known\\ \midrule
+  $\omega$ & \qquad \qquad $\pi^{0}\gamma$ \qquad \qquad & $(8.40 \pm 0.22)$\% \\
+  $\omega$ & \qquad \qquad $\pi^0\pi^{+}\pi^{-}$ \qquad \qquad & $(89.3 \pm 0.06)$\% \\ \midrule
+  $\eta$ & \qquad \qquad $\pi^0\pi^{+}\pi^{-}$ \qquad \qquad & $(22.92 \pm 0.28)$\% \\ \midrule
+  $\rho$ & \qquad \qquad $\pi^{+}\pi^{-}$ \qquad \qquad & $\sim 100$\% \\
+  \bottomrule 
+\end{tabular}
+}
+\caption{Decay modes of the $a_1$ meson and control modes $\omega,\eta$ and $\rho$ \cite{PDG2018}}
+\label{tab:pdg}
+\end{table}
+In the first section, we got a first insight on the importance of the $a_1$-$\rho$ system as a probe for chiral symmetry restoration. Eventually, one would like to measure the $a_1$ in heavy-ion collisions decaying only into electromagnetically interacting particles so effects of the QGP would be visible. Since this is a feasibility study of the measurement of the $a_1$ in the ALICE detector we use the decay modes which can be most easily tracked with the detector. With its TPC the ALICE detector has a very precise tool to trace charged particles. The ALICE detector also offers three calorimeters, the PHOS, the EMCAL and the DCAL which can be used to measure the energy of neutral particles. Looking at table \ref{tab:pdg} what we want to do to analyse the $a_1$ in the $\pi^0 \gamma$ channel, is to hope for the neutral pion to decay into two photons (which happens in approximately 99\% of the cases \cite{PDG2018}) and then measure them along with the other photon from the $a_1$ decay with the calorimeters. The other option is two hope for all of the photons to decay in the detector material and then use the dielectron pairs from the conversion to reconstruct the $a_1$. For the $\pi^0 \pi^{+}\pi^{-}$ decay channel we can use the tracking capabilities of the TPC to trace the charged pions and then do the same procedure as for the other decay channel for the neutral pion. \\
+Both techniques obviously have their advantages and disadvantages. The photon conversion method (PCM) works very well at low transverse momenta. This is because it uses the tracks of the charged particles to reconstruct the photon. Obviously the track of a particle with lower momentum will be bent more, i.e. have a smaller radius of curvature, then a particle with high momentum. Therefore a smaller radius of curvature should mean a better, i.e. smaller, resolution. We can estimate a resolution with $\sigma_{PCM} \sim R = \frac{p_T}{qB}$ by setting the centrifugal force of a particle equal to the Lorentz force in a magnetic field and assuming $p \simeq p_T$. For constant magnetic field and charge this estimate of the resolution obviously gets better with lower $p_T$. Another advantage is that particles can be identified relatively easily, e.g. using their specific energy loss in the TPC. One of the biggest disadvantages of PCM is the conversion probability. The conversion probability for ALICE for the integrated detector material for $R<180$ cm and $|\eta|<0.9$ is about 8.5\% \cite{ALICEPerfRep}. If we then have to take this to the power of three for the $\pi^0\gamma$ channel, this really dampens the already low probability to find the $a_1$ even more. \\
+For the calorimeters we can also make a quick approximation of the resolution. If we assume Gaussian distribution of the response (variance scaling like $\sqrt{N}$ where N is the number of events) the relative resolution scales like $\frac{\sigma}{N} = \frac{\sqrt{N}}{N} = \frac{1}{\sqrt{N}}$. If we also assume that each photon carries some average energy $E \sim p_T$ in the calorimeter we get as an estimate $\sigma_{Calo} \sim \frac{1}{\sqrt{p_T}}$. This obviously gets better with high $p_T$. One disadvantage is that all the particles that make it past the other detectors will end up in the calorimeters which are located at the outermost radii of the whole apparatus. We also have to identify the particles which can be done by using first of all a charged particle veto to get rid of all charged particles and then e.g. using the shower shape of the  decaying particle in the calorimeter.
 
-\subsection{Decay channels and analysis strategy}
-Use PCM with dielectrons because they have been used before ($\eta'$) and works well with TPC. (mention important decay channels).
 
-show $\rho$ peak which is by-product in charged pi-pi spectrum from 3pi $a_1$ channel. Try to properly fit with fitting script. might be difficult because of weird background, has already been measured in ALICE, e.g. \cite{ALICErho}.
-
-\subsection{Cuts and Event Selection}
+\subsection{$a_1 \rightarrow \pi_0 \gamma$ analysis}
+\subsubsection{Cuts and Event Selection}
 quote and discuss cuts
+
+get definition of $n\sigma$ from bachelor's thesis
+
+track cuts
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[h]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule		
+  Track Cut \qquad & \qquad Cut Range \\ \midrule
+  track $p_T$ \qquad & \qquad $p_T > 0.05$ GeV/c \\ 
+  TPC clusters \qquad & \qquad $\frac{N_{\text{TPC-Clusters}}}{N_{\text{findable TPC-Clusters}}} > 0.6$ \\
+  require TPC refit \qquad & \qquad TRUE \\ 
+  rejection of tracks with kinks \qquad & \qquad TRUE \\ 
+  \midrule
+  electron selection \qquad & \qquad $|n\sigma_e| < 3$ \\ \
+  pion rejection \qquad & \qquad for $p < 0.4$ GeV/c: $n\sigma_{\pi} < 0.5$ \\
+ \qquad & \qquad for $p > 0.4$ GeV/c: $n\sigma_{\pi} < 3$ \\
+  \bottomrule 
+\end{tabular}
+}
+\caption{General track and PID cuts for electron candidates from photon conversions from the $a_1 \rightarrow \pi^0 \gamma$ and subsequent $\pi^0 \rightarrow \gamma\gamma$ decay}
+\label{tab:pi0gammacuts}
+\end{table}
+  \renewcommand{\arraystretch}{1.0}
+  
+  
+
+V0 cuts
+show helix cut, but no cut on helix radius
+
+  \renewcommand{\arraystretch}{1.3}
+\begin{table}[h]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule			
+  V$^0$ Cut & Cut Range \\ \midrule
+  pseudorapidity of CP &  $|\eta_{\text{conv}}| < 0.9$ \\ 
+  $Z$ coordinate of CP &  $|Z_{\text{conv}}| < 240$ cm \\ 
+  radius of CP  &  $5 \ \text{cm} \ < |R_{\text{conv}}| < 180$ cm \\ 
+  line cut  &  $R_{\text{conv}} > |Z_{\text{conv}}| \cdot f \left(\eta_{\text{max}} \right) - Z_0 $\\
+  & with $Z_0 = 7$ cm and $\eta_{\text{max}} = 0.9$ \\ 
+ $\Psi_{\text{pair}}$ angle  &  $|\Psi_{\text{pair}}| < 0.1$ \\ 
+ cosine of pointing angle  &  $\text{cos} \left( \text{pointing angle} \right) > 0.85$ \\ 
+ $\chi^2$ of Kalman filter  &  $\chi^2 < 30$ \\
+ like-sign cut & reject V$^0$s with like-sign charged legs \\
+elliptical cut in Armenteros- \qquad \ \ &  $q_T < q_{T,\text{max}} \cdot \sqrt{1- \alpha^2/\alpha_{\text{max}}^2}$ \\ 
+ Podolanski plot &  with $q_{T,\text{max}} = 0.05$ GeV/c, $\alpha_{\text{max}} = 0.95$ \\
+  \bottomrule
+\end{tabular}
+}
+\caption{V$^0$ cuts used in the analysis; CP $\widehat{=}$ Conversion Point; $f \left(\eta_{\text{max}} \right)$ is defined in equation \ref{slope}}
+\label{tab:pi0gammaV0cuts}
+\end{table}
+\renewcommand{\arraystretch}{1.0}
+
+
+\subsection{$a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ analysis}
+\subsubsection{Cuts and Event Selection}
+quote and discuss cuts
+
+ele track cuts: same as for other analysis
+    
+    
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[h]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule		
+  Track Cut \qquad & \qquad Cut Range \\ \midrule
+  track $p_T$ \qquad & \qquad $p_T > 0.05$ GeV/c \\ 
+  TPC clusters \qquad & \qquad $\frac{N_{\text{TPC-Clusters}}}{N_{\text{findable TPC-Clusters}}} > 0.6$ \\
+  require TPC refit \qquad & \qquad TRUE \\ 
+  rejection of tracks with kinks \qquad & \qquad TRUE \\ 
+  \midrule
+  electron selection \qquad & \qquad $|n\sigma_e| < 3$ \\ \
+  pion rejection \qquad & \qquad for $p < 0.4$ GeV/c: $n\sigma_{\pi} < 0.5$ \\
+ \qquad & \qquad for $p > 0.4$ GeV/c: $n\sigma_{\pi} < 3$ \\
+  \bottomrule 
+\end{tabular}
+}
+\caption{General track and PID cuts for the electron candidates from photon conversions from the $\pi^0 \rightarrow \gamma\gamma$ decay}
+\label{tab:3pielecuts}
+\end{table}
+  \renewcommand{\arraystretch}{1.0}
+  
+
+cuts on charged pions:
+
+
+  856   esdTrackCuts->SetRequireSigmaToVertex(kFALSE);
+
+
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[h]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule		
+  Track Cut \qquad & \qquad Cut Range \\ \midrule
+  track $p_T$ \qquad & \qquad $p_T > 0.05$ GeV/c \\ 
+  track pseudorapidity \qquad & \qquad $|\eta| < 0.8$ \\ 
+  TPC clusters \qquad & \qquad $\frac{N_{\text{TPC-Clusters}}}{N_{\text{findable TPC-Clusters}}} > 0.8$ \\
+  crossed TPC rows \qquad & \qquad $N_{\mathrm{crossed \ rows}} > 70 $ \\
+  TPC cluster $\chi^2$ \qquad & \qquad $\frac{\chi^2}{N_{\mathrm{clusters}}} < 4 $ \\
+  require TPC refit \qquad & \qquad TRUE \\ 
+  require ITS refit \qquad & \qquad TRUE \\ 
+  DCA to vertex $p_T$ dependence $\chi^2$ \qquad & \qquad $ 0.0105+\frac{0.0350}{p_T^{1.1}}$ \\
+  DCA z-coord. to vertex $\chi^2$ \qquad & \qquad $ z_{DCA} < 2$ cm \\
+  ITS cluster $\chi^2$ \qquad & \qquad $\frac{\chi^2}{N_{\mathrm{clusters}}} < 36 $ \\
+  $\chi^2$ constrained vs global track \qquad & \qquad $\chi^2 < 36$ \\ 
+  rejection of tracks with kinks \qquad & \qquad TRUE \\ 
+  require sigma to vertex \qquad & \qquad FALSE \\ 
+  \midrule
+  pion selection \qquad & \qquad $|n\sigma_{\pi,TPC}| < 3$ \\ \
+ \qquad & \qquad $|n\sigma_{\pi,TOF}| < 3$ \\
+  \bottomrule 
+\end{tabular}
+}
+\caption{General track and PID cuts for the pions from the $a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ decay}
+\label{tab:3pipiocuts}
+\end{table}
+  \renewcommand{\arraystretch}{1.0}
+
 
 \subsection{MC production}
