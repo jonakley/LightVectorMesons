@@ -76,7 +76,7 @@
 \renewcommand{\rmdefault}{ptm}
 \usepackage{mathptmx}
 
-\RequirePackage{graphicx,amsmath,amssymb,array,tabularx,url,xspace,subfigure}
+\RequirePackage{graphicx,amsmath,amssymb,array,tabularx,url,xspace}
 \RequirePackage{ifthen}
  
 \typeout{Document Class "ALICE_analysis_notes" 1.06 (8 July 2010)}
