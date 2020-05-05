@@ -19,12 +19,15 @@
 \label{tab:pdg}
 \end{table}
 In the first section, we got a first insight on the importance of the $a_1$-$\rho$ system as a probe for chiral symmetry restoration. Eventually, one would like to measure the $a_1$ in heavy-ion collisions decaying only into electromagnetically interacting particles so effects of the QGP would be visible. Since this is a feasibility study of the measurement of the $a_1$ in the ALICE detector we use the decay modes which can be most easily tracked with the detector. With its TPC the ALICE detector has a very precise tool to trace charged particles. The ALICE detector also offers three calorimeters, the PHOS, the EMCAL and the DCAL which can be used to measure the energy of neutral particles. Looking at table \ref{tab:pdg} what we want to do to analyse the $a_1$ in the $\pi^0 \gamma$ channel, is to hope for the neutral pion to decay into two photons (which happens in approximately 99\% of the cases \cite{PDG2018}) and then measure them along with the other photon from the $a_1$ decay with the calorimeters. The other option is two hope for all of the photons to decay in the detector material and then use the dielectron pairs from the conversion to reconstruct the $a_1$. For the $\pi^0 \pi^{+}\pi^{-}$ decay channel we can use the tracking capabilities of the TPC to trace the charged pions and then do the same procedure as for the other decay channel for the neutral pion. \\
-Both techniques obviously have their advantages and disadvantages. The photon conversion method (PCM) works very well at low transverse momenta. This is because it uses the tracks of the charged particles to reconstruct the photon. Obviously the track of a particle with lower momentum will be bent more, i.e. have a smaller radius of curvature, then a particle with high momentum. Therefore a smaller radius of curvature should mean a better, i.e. smaller, resolution. We can estimate a resolution with $\sigma_{PCM} \sim R = \frac{p_T}{qB}$ by setting the centrifugal force of a particle equal to the Lorentz force in a magnetic field and assuming $p \simeq p_T$. For constant magnetic field and charge this estimate of the resolution obviously gets better with lower $p_T$. Another advantage is that particles can be identified relatively easily, e.g. using their specific energy loss in the TPC. One of the biggest disadvantages of PCM is the conversion probability. The conversion probability for ALICE for the integrated detector material for $R<180$ cm and $|\eta|<0.9$ is about 8.5\% \cite{ALICEPerfRep}. If we then have to take this to the power of three for the $\pi^0\gamma$ channel, this really dampens the already low probability to find the $a_1$ even more. \\
-For the calorimeters we can also make a quick approximation of the resolution. If we assume Gaussian distribution of the response (variance scaling like $\sqrt{N}$ where N is the number of events) the relative resolution scales like $\frac{\sigma}{N} = \frac{\sqrt{N}}{N} = \frac{1}{\sqrt{N}}$. If we also assume that each photon carries some average energy $E \sim p_T$ in the calorimeter we get as an estimate $\sigma_{Calo} \sim \frac{1}{\sqrt{p_T}}$. This obviously gets better with high $p_T$. One disadvantage is that all the particles that make it past the other detectors will end up in the calorimeters which are located at the outermost radii of the whole apparatus. We also have to identify the particles which can be done by using first of all a charged particle veto to get rid of all charged particles and then e.g. using the shower shape of the  decaying particle in the calorimeter. \\
-In table \ref{tab:pdg} there are also a few other particles shown which have the same decay modes as the $a_1$, the $\omega$ and the $\eta$ and the $\rho$ which should appear in the charged pion mass spectrum of the other decays. We can use these particle decays to see if our analysis is sensible.
+Both techniques obviously have their advantages and disadvantages. The photon conversion method (PCM) works very well at low transverse momenta. This is because it uses the tracks of the charged particles to reconstruct the photon. Obviously the track of a particle with lower momentum will be bent more, i.e. have a smaller radius of curvature, then a particle with high momentum. Therefore a smaller radius of curvature should mean a better, i.e. smaller, resolution. We can estimate a resolution with $\sigma_{PCM} \sim R = \frac{p_T}{qB}$ by setting the centrifugal force of a particle equal to the Lorentz force in a magnetic field and assuming $p \simeq p_T$. For constant magnetic field and charge this estimate of the resolution obviously gets better with lower $p_T$. Another advantage is that particles can be identified relatively easily, e.g. using their specific energy loss in the TPC. One of the biggest disadvantages of PCM is the conversion probability. The conversion probability for ALICE for the integrated detector material for $R<180$ cm and $|\eta|<0.9$ is about 8.5\% \cite{ALICEPerfRep}. If we then have to take this to the power of three for the $\pi^0\gamma$ channel, the already low probability to find the $a_1$ is dampened even more. \\
+For the calorimeters we can also make a quick estimation of the resolution. If we assume Gaussian distribution of the response (variance scaling like $\sqrt{N}$ where N is the number of events) the relative resolution scales like $\frac{\sigma}{N} = \frac{\sqrt{N}}{N} = \frac{1}{\sqrt{N}}$. If we also assume that each photon carries some average energy $E \sim p_T$ in the calorimeter we get as an estimate $\sigma_{Calo} \sim \frac{1}{\sqrt{p_T}}$. This obviously gets better with high $p_T$. One disadvantage is that all the particles that make it past the other detectors will end up in the calorimeters which are located at the outermost radii of the whole apparatus. We also have to identify the particles which can be done by using first of all a charged particle veto to get rid of all charged particles and then e.g. using the shower shape of the  decaying particle in the calorimeter. \\
+In table \ref{tab:pdg} one can also find a few other particles which have the same decay modes as the $a_1$: the $\omega$ and the $\eta$ and also the $\rho$ which should appear in the charged pion mass spectrum of the other decays. We can use these particle decays to see if our analysis is sensible.
+
+\subsection{Event Selection}
+For the event selection we took all of the  13 TeV pp events into account which are flagged by the minimum bias INT7 trigger which requires a coinciding signal in the V0 detector arrays. We also required the detectors we used in the analysis to provide a good signal for the flagged events. Then we performed the basic pile-up rejection to get rid of events where several proton collisions happened in a too short time window for the single events to still be resolved. Finally, we required the z-coordinate of the primary vertex to be within 10 cm of the nominal interaction point and required the primary vertex to have at least one contributor. After this procedure about events where left. \\
+
 
 \subsection{$a_1 \rightarrow \pi_0 \gamma$ analysis}
-\subsubsection{Event Selection and Cuts}
 \renewcommand{\arraystretch}{1.3}
 \begin{table}[b]
 \centering{
@@ -46,11 +49,7 @@ In table \ref{tab:pdg} there are also a few other particles shown which have the
 \label{tab:pi0gammacuts}
 \end{table}
 \renewcommand{\arraystretch}{1.0}
-\textbf{Event Selection}\\
-For the event selection we took all of the  13 TeV pp events into account which are flagged by the minimum bias INT7 trigger which requires a coinciding signal in the V0 detector arrays. We also required the detectors we used in the analysis to provide a good signal for the flagged events. Then we performed the basic pile-up rejection to get rid of events where several proton collisions happened in a too short time window for the single events to still be resolved. Finally, we required the z-coordinate of the primary vertex to be within 10 cm of the nominal interaction point and required the primary vertex to have at least one contributor. After this procedure about events where left. \\
 Before the actual analysis starts, we already do some general cuts on all of the tracks that are found in the detector. They can be found in table \ref{tab:pi0gammacuts} alongside the particle identification (PID) cuts which are used later in the analysis to identify the particles belonging to the tracks. \\
-
-\textbf{Track Cuts}\\
 The track $p_T$ cut is used to reject the tracks for which the detector efficiency is low. Because the efficiency of the TPC drops significantly at around $p_T = 0.05$ GeV we used this value as the cut-off for the track $p_T$. The TPC cluster cut makes sure that at least 60\% of the available clusters for the track are crossed to obtain a good signal. We also required all of the tracks to be refitted in the whole TPC. This assures good reconstruction of the tracks which is important to properly reconstruct the V$^0$ candidates which are candidates for photons in our analysis. Finally, we also reject particles with kinks. These are particles which decay weakly and therefore don't fit our event topology. \\
 Then in the analysis we do a selection of all tracks based on their specific energy loss in the TPC. This is done using a discrimination variable $n\sigma_i$ which is defined as
 \begin{equation}
@@ -74,15 +73,52 @@ In the analysis we used the specific energy loss of the particles in the TPC as 
 \caption{The specific energy loss of the particles in the TPC expressed in terms of the $n\sigma$ discrimination variable plotted against the particle momentum, here only shown for the negative particles; the colour scale shows the number of counts}
 \label{fig:V0tpc}
 \end{figure}
-
-\textbf{V$^0$ cuts} \\
-
-
-quote and discuss cuts (see bachelor thesis for discussion which is basically the same, also add the other cuts which where not used and discuss why they were not used) \\  
-
-V0 cuts
-show helix cut, but no cut on helix radius
-
+After the track cuts we have a basic selection of tracks in the detector. Now, we can start looking for the final products of our decay channel, i.e. the $\pi^0$ and the photon. Since the pion also decays into photons in 99\% of cases, we only have to find photons and then later find out which of them come from pion decays. To find the photons we use the so-called V$^0$ finder of ALICE which finds all decays in the detector which come from a neutral particle and then decay into one positive and one negative particle in a V-like decay, hence the name. In the data all of the V$^0$ candidates are flagged and can be looped over. We can then apply cuts to these V$^0$s to get a good selection of photons. \\
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[t]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule			
+  V$^0$ Cut & Cut Range \\ \midrule
+  pseudorapidity of CP &  $|\eta_{\text{conv}}| < 0.9$ \\ 
+  $Z$ coordinate of CP &  $|Z_{\text{conv}}| < 240$ cm \\ 
+  radius of CP  &  $5 \ \text{cm} \ < R_{\text{conv}} < 180$ cm \\ 
+  line cut  &  $R_{\text{conv}} > |Z_{\text{conv}}| \cdot f \left(\eta_{\text{max}} \right) - Z_0 $\\
+  & with $Z_0 = 7$ cm and $\eta_{\text{max}} = 0.9$ \\ 
+ $\Psi_{\text{pair}}$ angle  &  $|\Psi_{\text{pair}}| < 0.1$ \\ 
+ cosine of pointing angle  &  $\text{cos} \left( \text{pointing angle} \right) > 0.85$ \\ 
+ $\chi^2$ of Kalman filter  &  $\chi^2 < 30$ \\
+ like-sign cut & reject V$^0$s with like-sign charged legs \\
+elliptical cut in Armenteros- \qquad \ \ &  $q_T < q_{T,\text{max}} \cdot \sqrt{1- \alpha^2/\alpha_{\text{max}}^2}$ \\ 
+ Podolanski plot &  with $q_{T,\text{max}} = 0.05$ GeV/c, $\alpha_{\text{max}} = 0.95$ \\
+  \bottomrule
+\end{tabular}
+}
+\caption{V$^0$ cuts used in the analysis; CP $\widehat{=}$ Conversion Point; $f \left(\eta_{\text{max}} \right)$ is defined in equation \ref{eqn:slope}}
+\label{tab:pi0gammaV0cuts}
+\end{table}
+\renewcommand{\arraystretch}{1.0}
+First, we apply some geometrical cuts to only get V$^0$ which are in the acceptance of our detector. The geometrical cuts are the first four cuts in table \ref{tab:pi0gammaV0cuts}. The cut on the pseudorapidity and the $Z$ coordinate of the conversion point makes sure that the conversion happened within the acceptance of our detector. For the radius of the conversion point we have a lower and an upper cut. The lower cut is used to suppress track pairs coming from the primary vertex that might mimic conversions, e.g. lepton pairs from Dalitz decays. The upper cut is used to get rid of conversions which happen late in the TPC. These conversion can't be tracked properly either because the coverage of the legs of the V$^0$ in the TPC is too small. Finally, we also apply a line cute. As the name suggests the line cut rejects all of the conversions that happen below a line in the $ZR$ plane which happen below a line with the slope
+\begin{equation}
+\label{eqn:slope}
+f \left(\eta_{\text{max}} \right) = \text{tan} \left( 2 \ \text{arctan} \left( \text{exp} \left( - \eta_{\text{max}} \right) \right) \right)
+\end{equation}
+The cut is also a cut to get rid of conversions which happen outside of regions of the detector with a good acceptance. \\
+The following cuts in the table are cuts which are related to V$^0$ decays and especially conversions. The $\Psi_{\mathrm{pair}}$ angle is defined by 
+\begin{equation}
+\label{eqn:psipair}
+\Psi_{\text{pair}} = \text{arcsin} \left( \frac{\Delta \theta}{\xi_{\text{pair}}} \right)
+\end{equation} 
+where $\Delta \theta = \theta_{e^-} - \theta_{e^+}$ is the difference in the polar angle of the daughter tracks of the V$^0$ candidate and 
+$\xi_{\text{pair}} = \text{arccos} \left( \frac{\vec{p}_{e^-} \ \cdot \ \vec{p}_{e^+}}{|\vec{p}_{e^-}| \cdot |\vec{p}_{e^+}|} \right)$ 
+is the angle between the momentum vectors of the $e^+e^-$ pair. We can understand $\Psi_{\mathrm{pair}}$ better by looking at the invariant mass of a dilapton pair
+\begin{equation}
+\label{eqn:masspa}
+m_{e^+e^-}^2 = 2 E_{e^-} E_{e^+} \cdot \left( 1- \text{cos } \xi_{\text{pair}} \right)
+\end{equation}
+We have to differ two cases now. If the V$^0$ decay is a photon conversion, the left-hand side is zero up to recoil effects of the nucleus at which the conversion took place. Since the energy of the leptons has to be positive, the angle between the momenta of the leptons also has to be very small. If there was no magnetic field, the leptons would then just fly on straight tracks in the detector. With the field applied along the $z$-axis of the detector this is not the case any more. Since $\vec{F}_L = q \vec{v} \times \vec{B}$, the force on the leptons doesn't have a contribution out of the azimuthal plane. Therefore, the force from the magnetic field can only open the particle tracks in the azimuthal plane but does not have an influence on the polar angle which is only given by the momentum of the mother particle. With this information $\Psi_{\mathrm{pair}}$ should be very close to zero for conversions, because $\Delta\theta$ should be zero for conversions and $\xi_{\mathrm{pair}}$ should only gets contributions from the recoil of the nucleus. \\
+In the case of a massive particle the left-hand side is not zero. Therefore the opening angle $\xi_{\mathrm{pair}}$ gets a big contribution according to eqn. \ref{eqn:masspa}. This contribution is not constrained by anything and can therefore also be in the polar direction. Therefore according to \ref{eqn:psipair}, we have a non-zero value for $\Psi_{\mathrm{pair}}$. \\
+$\Psi_{\mathrm{pair}}$ can be understood as the angle between the plane that is orthogonal to the magnetic field and the plane that is spanned by the momenta of the leptons. We can therefore use this parameter to distinguish the decay of massless (i.e. photons) from massive V$^0$s. \\
 \begin{sidewaysfigure}[p!]
 \centering
 \begin{subfigure}[h]{.4\linewidth}
@@ -141,7 +177,23 @@ show helix cut, but no cut on helix radius
 \caption{Plots of the further V$^0$ cuts as they were used in this analysis}
 \label{fig:V0cuts}
 \end{sidewaysfigure} 
-blablablablabla
+The next cut is a cut on the pointing angle which is the angle between the line defined by the V$^0$ legs pointing back to the V$^0$ vertex and the line which is defined by connecting the V$^0$ vertex to the primary vertex. If the V$^0$ vertex under consideration really comes from a V$^0$ decay the legs obviously should point back to the mother momentum and therefore the primary vertex, so the pointing angle should be zero. \\
+We also used a cut on the $\chi^2$ value of the Kalman filter which is used during the reconstruction procedure of the V$^0$ vertex. We chose the value such that we have a good selection of V$^0$s but simultaneously also do not lose too much statistics. \\
+The like-sign cute was added to get rid of false V$^0$s where the leptons have the same charge. The amount of V$^0$s rejected by this cut is quite low but since these decays are definitely no real V$^0$ decays it it still worth it to get rid of them. \\
+The last V$^0$ cut is a cut in the so-called Armenteros-Podolanski plot. In the Armenteros-Podolanski plot, the longitudinal momentum asymmetry of the daughter particles
+\begin{equation}
+\alpha = \frac{p_L^{+} - p_L^{-}}{p_L^{+} + p_L^{-}}
+\end{equation}
+is plotted against the transverse momentum of one of the daughter particles with respect to the momentum of the V$^0$ candidate
+\begin{equation}
+q_T = \frac{|\vec{p}^{-} \times \vec{p}_{V^0}|}{|\vec{p}_{V^0}|}
+\end{equation}
+Looking again at eqn. \ref{eqn:masspa}, we know that $\xi_{\mathrm{pair}}$ must be zero. Therefore, photon conversions can not contribute to the transverse momentum of the dielectron pair because they fly in the same direction after the conversion. Thus, we expect photon conversions to be at the bottom of the Armenteros-Podolanksi plot. The only small contribution to $q_T$ comes again from recoil effects from the nucleus. That is why we used an elliptical cut around the bottom of the plot to cut off the ellipses from massive V$^0$ decays and get a good selection of photon conversions. \\
+The cuts which were described up to this point are heavily inspired or completely adopted from other similar analyses performed in the ALICE Collaboration \cite{ananote1, ananote2}. The analysis notes review works using the conversion method to measure the properties of neutral mesons and to determine the material budget of the ALICE detector. \\
+
+
+
+show helix cut, but no cut on helix radius, also other cuts: $\Delta\theta,\Delta\eta$ etc.
 
 
 
@@ -150,30 +202,6 @@ blablablablabla
 
 
 
-  \renewcommand{\arraystretch}{1.3}
-\begin{table}[h]
-\centering{
-\begin{tabular}{@{} ll @{}}
-  \toprule			
-  V$^0$ Cut & Cut Range \\ \midrule
-  pseudorapidity of CP &  $|\eta_{\text{conv}}| < 0.9$ \\ 
-  $Z$ coordinate of CP &  $|Z_{\text{conv}}| < 240$ cm \\ 
-  radius of CP  &  $5 \ \text{cm} \ < |R_{\text{conv}}| < 180$ cm \\ 
-  line cut  &  $R_{\text{conv}} > |Z_{\text{conv}}| \cdot f \left(\eta_{\text{max}} \right) - Z_0 $\\
-  & with $Z_0 = 7$ cm and $\eta_{\text{max}} = 0.9$ \\ 
- $\Psi_{\text{pair}}$ angle  &  $|\Psi_{\text{pair}}| < 0.1$ \\ 
- cosine of pointing angle  &  $\text{cos} \left( \text{pointing angle} \right) > 0.85$ \\ 
- $\chi^2$ of Kalman filter  &  $\chi^2 < 30$ \\
- like-sign cut & reject V$^0$s with like-sign charged legs \\
-elliptical cut in Armenteros- \qquad \ \ &  $q_T < q_{T,\text{max}} \cdot \sqrt{1- \alpha^2/\alpha_{\text{max}}^2}$ \\ 
- Podolanski plot &  with $q_{T,\text{max}} = 0.05$ GeV/c, $\alpha_{\text{max}} = 0.95$ \\
-  \bottomrule
-\end{tabular}
-}
-\caption{V$^0$ cuts used in the analysis; CP $\widehat{=}$ Conversion Point; $f \left(\eta_{\text{max}} \right)$ is defined in equation \ref{slope}}
-\label{tab:pi0gammaV0cuts}
-\end{table}
-\renewcommand{\arraystretch}{1.0}
 
 
 \subsection{$a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ analysis}

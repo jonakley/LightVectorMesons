@@ -1,4 +1,4 @@
-\documentclass[ALICE,manyauthors,clockwise]{ALICE_analysis_notes}
+\documentclass[ALICE,manyauthors]{ALICE_analysis_notes}
 %\documentclass[ALICE,manyauthors]{ALICE_scientific_notes}
 %
 %\newcommand{\jpsi}{\rm J/$\psi$}
@@ -10,7 +10,8 @@
 %\newcommand{\red}{\textcolor{red}}
 %\newcommand{\blue}{\textcolor{blue}}
 
-\usepackage{rotating}
+\usepackage[clockwise]{rotating}
+\usepackage{bm}	%for bold math symbols
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{hyperref}
@@ -18,7 +19,6 @@
 \usepackage{booktabs}	% nicer tables
 \usepackage{caption}
 \usepackage{subcaption}	% for subfigures
-%\usepackage[clockwise]{rotating}
 
 
 \newcommand{\slfrac}[2]{\left.#1\right/#2}
