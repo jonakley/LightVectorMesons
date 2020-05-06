@@ -191,7 +191,6 @@ q_T = \frac{|\vec{p}^{-} \times \vec{p}_{V^0}|}{|\vec{p}_{V^0}|}
 \end{equation}
 Looking again at eqn. \ref{eqn:masspa}, we know that $\xi_{\mathrm{pair}}$ must be zero. Therefore, photon conversions can not contribute to the transverse momentum of the dielectron pair because they fly in the same direction after the conversion. Thus, we expect photon conversions to be at the bottom of the Armenteros-Podolanksi plot. The only small contribution to $q_T$ comes again from recoil effects from the nucleus. That is why we used an elliptical cut around the bottom of the plot to cut off the ellipses from massive V$^0$ decays and get a good selection of photon conversions. \\
 The cuts which were described up to this point are heavily inspired or completely adopted from other similar analyses performed in the ALICE Collaboration \cite{ananote1, ananote2}. The analysis notes review works using the conversion method to measure the properties of neutral mesons and to determine the material budget of the ALICE detector. \\
-
 \begin{sidewaysfigure}[p!]
 \centering
 \begin{subfigure}[h]{.4\linewidth}
@@ -219,9 +218,12 @@ The cuts which were described up to this point are heavily inspired or completel
 \end{subfigure}
 \vspace{0.5cm}
 \caption{Plots of the geometric V$^0$ cuts as they were used in this analysis}
-\label{fig:V0cuts}
+\label{fig:addV0cuts}
 \end{sidewaysfigure}
-
+We also considered a few other cuts which can be found in figure \ref{fig:addV0cuts}. The cuts you can see there also exploit properties of conversions. The first figure shows the difference of the azimuthal angle $\Delta\phi$ between the V$^0$ legs which should be negative for conversions for a negative magnetic field. But the abundance of V$^0$s with positive $\Delta\phi$ is so small that the effect of applying the cut would not even be visible. Therefore, we did cut on $\Delta\phi$. \\
+The second plot shows the difference of the polar angle $\Delta\theta$ between the V$^0$ legs. As already discussed above this should be zero because converting photons cannot naturally contribute to the opening angle of their daughters and the magnetic field only acts in the azimuthal plane and therefore also cannot change the polar angle of the leptons. Since the distribution around zero is quite sharp we also did not cut on $\Delta\theta$. \\
+The other two plots show the distribution of the difference of the pseudorapidity and the difference of the cotangent of the polar angle between the V$^0$ legs. Since both the pseudorapidity $\eta = -\log\tan\frac{\theta}{2}$ and $\mathrm{cot}\theta$ are continuous functions of $\theta$ and the $\theta$ distribution was already sharp around zero, we also do not expect a huge difference in these distributions. Thus, we also did not cut on $\Delta\eta$ and $\Delta\mathrm{cot}\theta$. \\
+The last check we also considered was if the reconstructed radii of the helices of the V$^0$ legs is compatible with the coordinates of the legs. For that we calculated the difference of the helix centre from the coordinates of the legs. Then we subtracted the radius of both helices. If the difference is zero the reconstruction worked well. The distribution of the distance between the helices can be found in figure \ref{fig:helixdist}. The distribution looks reasonable with a trend of slightly overestimating the curvature radius. But with the cut we would not gain a lot. The cut is also hard to implement in an AOD analysis and it would be too time consuming to use ESDs with the amount of data we used. So we did not use the cut. \\
 \begin{figure}[b]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/additionalV0cuts/helixdist.png}
