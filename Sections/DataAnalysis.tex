@@ -231,11 +231,69 @@ The last check we also considered was if the reconstructed radii of the helices 
 	\label{fig:helixdist}
 \end{figure}
 
+\subsubsection{Analysis with Calorimeters}
+For the calorimeter analysis all of the calorimeters in ALICE where used. Namely, the Photon Spectrometer (PHOS) and the electromagnetic calorimeter (EMCAL) also including the Di-jet Calorimeter (DCAL). Since the DCAL is just an addendum to the EMCAL which was added later to be able to reconstruct jets better we will refer to EMCAL+DCAL as EMCAL for short. \\
+For the calorimeter analysis we used the same event preselection as for the PCM analysis. Then, specific calorimeter cuts were applied which can be found in table \ref{tab:calocuts}. The first cut requires the number of clusters in an event to be bigger than two which makes sure that at least one decay happened in the event and was recorded with either the EMCAL or the PHOS. Then we applied shower shape cuts to the particle showers for both EMCAL and PHOS. On approach to differentiate between different shower shapes is to use a covariance matrix \cite{CaloCovMat}. The covariance matrix is defined by
+\begin{equation}
+M_{ij} = \left( x_i(E) - \bar{x}_i((E) \right)\left( x_j(E) - \bar{x}_j((E) \right)
+\end{equation}
+where $x_i(E)$ is the total pulse height observed in one calorimeter block at energy $E$ and $\bar{x}_i((E)$ is the expected pulse height that can be obtained from simulations or a study of the response of the detector with a test beam at different energies. The diagonal elements of the matrix give the variance of the pulse height in each calorimeter block while the off-diagonal elements give the correlation between the calorimeter blocks. We can also define a $\chi^2$ function with help of the covariance matrix as follows
+\begin{equation}
+\chi^2(E) = X_i(E) M_{ij}^{-1}(E) X_j(E)
+\end{equation}
+where $X_i(E) = x_i(E) - \bar{x}_i((E)$.
+In the EMCAL the shower shape cut is applied by requiring that the eigenvalue of the covariance matrix lies within a lower and an upper bound. This makes sure we select particle showers coming from photons which have a certain shower shape that can be differentiated from other particles. For the PHOS we also apply a cut on the shower shape by cutting on the $\chi^2$ value obtained from the covariance matrix. \\
+\\
+\\
+time of flight?? \\
+\\
+\\
+We can also improve the neutral cluster detection in PHOS with help of a charged particle veto which is provided by a dedicated detector. If there's a hit of a charged particle in the CPV detector it can be matched to the clusters in the calorimeter and the cluster corresponding to the charged particle can be removed. \\
+Besides the CPV matching capability we can also try to match the other tracks in the detector to match them to clusters which come from charged particles. \\
+\\
+\\
+In the PHOS this is done by .. z coordinate normalized with respect to what??
+\\
+\\
+In the EMCAL the matching is done by comparing the pseudorapidity $\eta_{\mathrm{proj}}$ and azimuthal angle $\phi_{\mathrm{proj}}$ of the charged particle track projected on the surface of the PHOS with the pseudorapidity $\eta_{\mathrm{EMCAL}}$ and azimuthal angle $\phi_{\mathrm{EMCAL}}$ of the cluster in the EMCAL. If they coincide within a certain accuracy, the cluster is removed from the analysis. \\
+Finally, we also apply energy cuts to both the PHOS and the EMCAL. The lower cut is used to get rid of low-energy noise and the high cut is used to get rid of anomalous events at extremely high energies.
+
+include calo plots:
+phi-eta distribution, energy cut, $\chi^2$ cuts?
+
+write about correction task
+
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[t]
+\centering{
+\begin{tabular}{@{} ll @{}}
+  \toprule		
+  Calorimeter Cut \qquad & \qquad Cut Range \\ \midrule
+  Number of Clusters \qquad & \qquad $N_{\mathrm{Cluster}} \geq 2$ \\ 
+  Shower Shape EMCAL \qquad & \qquad $ 0.1 < \lambda < 0.366$ \\ 
+  Cluster $\chi^2$ PHOS \qquad & \qquad $\chi^2 < 6.25$ \\
+  Time Of Flight \qquad & \qquad $t_{\mathrm{TOF}} < 12.5$ ns \\
+  Charged Particle Veto \qquad & \qquad TRUE \\
+  PHOS Track Matching \qquad & \qquad $\sqrt{\Delta\phi^2 + \Delta z^2} < 10$  \\ 
+  EMCAL Track Matching \qquad & \qquad  $\sqrt{\left(\eta_{\mathrm{proj}}-\eta_{\mathrm{EMCAL}}\right)^2 + \left(\phi_{\mathrm{proj}}-\phi_{\mathrm{EMCAL}}\right)^2} < 0.05$ \\ 
+  EMCAL Energy Cut \qquad & \qquad $0.7 \ \mathrm{GeV} \ < E_{\mathrm{EMCAL}} < 100$ GeV \\
+  PHOS Energy Cut \qquad & \qquad $0.2 \ \mathrm{GeV} \ < E_{\mathrm{PHOS}} < 100$ GeV \\
+  \bottomrule 
+\end{tabular}
+}
+\caption{EMCAL AND PHOS cuts for the $a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ decay}
+\label{tab:calocuts}
+\end{table}
+\renewcommand{\arraystretch}{1.0}
+
+
+
 \subsection{$a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ analysis}
 For the analysis of the 3$\pi$ final state we used the same event selection as for the other analysis. Since we also reconstructed the neutral pion with the conversion of the photons it decays into, we also used the same cuts as above (c.f. table \ref{tab:pi0gammacuts} and \ref{tab:pi0gammaV0cuts}) to find the electron tracks and then the converted photons in the detector. For the charge pions we had to do a bit more worked because they are the most abundant species in a pp collision and we wanted to make sure to get a very clean selection of pions. \\
 For the charged pions we used the cuts which are known as the 2011 standard ITS-TPC track cuts in ALICE. They can be found in table \ref{tab:3pipiocuts}. \\
 The first cut is a cut on $p_T$ which was also used for the electrons to get rid of low momentum particles which cannot be tracked properly. Unlike in the case of electron tracks where the electrons are no final state particles, we now have apply all of the cuts directly to the charged pions and not to some mother particle like the photon candidates before. Therefore we also apply a pseudorapity cut to the charged pion tracks to make sure that they lie within the acceptance of our detector. Then as in the electron case we also apply TPC cluster cuts. Here they are more strict since pions are the most abundant species in pp collisions. Apart from the ratio of TPC clusters over all findable TPC clusters we also require the tracks to have crossed at least 70 rows of the TPC to make sure they are recorded properly and don't lie in dead spots of the TPC. We also apply a cut on the $\chi^2$ of the TPC clusters to make sure the tracks were reconstructed properly in most of the cells. Then, we require a refit in the TPC and to the ITS. These refits already happen during the reconstruction of the tracks during the basic event reconstruction. In the ITS refit the tracks from the TPC are fitted to the hits in the ITS to get more track information from the whole detector. In the TPC refit the whole track is refitted from the innermost point in the detector to the TPC to make sure that the we get a good fit for the whole global track without any artefacts like kinks etc. Then we also make assumptions on the behaviour of the distance of closest approach (DCA) to the primary vertex in the $XY$ plane as a function of the track $p_T$ which should be below a certain threshold. Here, low-energy particles are allowed to be farther away from the primary vertex because the tracking does not work as well at low momenta. We also cut on the DCA in the $z$-direction where the transverse momentum of the particle obviously does not matter since the bigger part of the momentum in the $z$-direction comes from pre-collision kinematics. We then also cut on the $\chi^2$ value of the clusters in the ITS and the $\chi^2$ value we obtain from comparing the global track obtained from combining the TPC with the ITS track with the constrained TPC track. As before we also reject tracks with kinks because they correspond to a weak decay topology. We do not require the $\sigma$ to vertex option which when enabled requires the distance from the track to the vertex to be calculated in terms of the standard deviation $\sigma$. \\
-For the PID in addition to the TPC we also used the time of flight (TOF) detector here. The TOF detector measures the time of flight through the detector area from which we the particle velocity $\beta$ can be calculated. We can then plot the velocity against the momentum which is mass dependent. Therefore we can identify the particle by making an assumption on the mass. As for the selection for the electrons before we used a cut of 3$\sigma$ for both the TPC and the TOF cut. We did not apply a rejection of other particles since pions are a lot more abundant than other species and we would lose more statistics from cutting out the area where other particles cross the Bethe-Bloch line of the pions than gaining informaation from rejecting the wrong particles in the PID which can also be rejected by other cuts, e.g. by also applying the TOF PID cuts. In fig. \ref{fig:PIDChPio} $n\sigma$ for the assumption of a pion plotted against the momentum can be found for the TPC and TOF.
+For the PID in addition to the TPC we also used the time of flight (TOF) detector here. The TOF detector measures the time of flight through the detector area from which we the particle velocity $\beta$ can be calculated. We can then plot the velocity against the momentum which is mass dependent. Therefore we can identify the particle by making an assumption on the mass. As for the selection for the electrons before we used a cut of 3$\sigma$ for both the TPC and the TOF cut. We did not apply a rejection of other particles since pions are a lot more abundant than other species and we would lose more statistics from cutting out the area where other particles cross the Bethe-Bloch line of the pions than gaining informaation from rejecting the wrong particles in the PID which can also be rejected by other cuts, e.g. by also applying the TOF PID cuts. In fig. \ref{fig:PIDChPio} a plot of the $n\sigma$ variable for the assumption of a pion versus the momentum can be found for the TPC and TOF.
 \renewcommand{\arraystretch}{1.3}
 \begin{table}[t]
 \centering{
