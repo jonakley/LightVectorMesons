@@ -323,9 +323,9 @@
 % Experiment date of approval
 \put(0,-30){\makebox(0,0)[lb]{\normalsize\@EXPdate}}
 % CERN PH Preprint number 
-\put(160,-25){\makebox(0,0)[rb]{\normalsize\@PHnumber}}
+%\put(160,-25){\makebox(0,0)[rb]{\normalsize\@PHnumber}}
 % CERN PH Preprint date of approval
-\put(160,-30){\makebox(0,0)[rb]{\normalsize\@PHdate}}
+\put(160,-25){\makebox(0,0)[rb]{\normalsize\@PHdate}}
 %\put(80,-250){\makebox(0,0){\CERNCopyright}} %%% Copyright notice
 \end{picture} 
 

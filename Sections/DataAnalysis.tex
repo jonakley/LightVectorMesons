@@ -27,7 +27,7 @@ In table \ref{tab:pdg} one can also find a few other particles which have the sa
 For the event selection we took all of the  13 TeV pp events into account which are flagged by the minimum bias INT7 trigger which requires a coinciding signal in the V0 detector arrays. We also required the detectors we used in the analysis to provide a good signal for the flagged events. Then we performed the basic pile-up rejection to get rid of events where several proton collisions happened in a too short time window for the single events to still be resolved. Finally, we required the z-coordinate of the primary vertex to be within 10 cm of the nominal interaction point and required the primary vertex to have at least one contributor. After this procedure about events where left. \\
 
 
-\subsection{$a_1 \rightarrow \pi_0 \gamma$ analysis}
+\subsection{$a_1 \rightarrow \pi_0 \gamma$ Analysis}
 \renewcommand{\arraystretch}{1.3}
 \begin{table}[b]
 \centering{
@@ -289,7 +289,7 @@ write about correction task
 
 
 
-\subsection{$a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ analysis}
+\subsection{$a_1 \rightarrow \pi^0\pi^{+}\pi^{-}$ Analysis}
 For the analysis of the 3$\pi$ final state we used the same event selection as for the other analysis. Since we also reconstructed the neutral pion with the conversion of the photons it decays into, we also used the same cuts as above (c.f. table \ref{tab:pi0gammacuts} and \ref{tab:pi0gammaV0cuts}) to find the electron tracks and then the converted photons in the detector. For the charge pions we had to do a bit more worked because they are the most abundant species in a pp collision and we wanted to make sure to get a very clean selection of pions. \\
 For the charged pions we used the cuts which are known as the 2011 standard ITS-TPC track cuts in ALICE. They can be found in table \ref{tab:3pipiocuts}. \\
 The first cut is a cut on $p_T$ which was also used for the electrons to get rid of low momentum particles which cannot be tracked properly. Unlike in the case of electron tracks where the electrons are no final state particles, we now have apply all of the cuts directly to the charged pions and not to some mother particle like the photon candidates before. Therefore we also apply a pseudorapity cut to the charged pion tracks to make sure that they lie within the acceptance of our detector. Then as in the electron case we also apply TPC cluster cuts. Here they are more strict since pions are the most abundant species in pp collisions. Apart from the ratio of TPC clusters over all findable TPC clusters we also require the tracks to have crossed at least 70 rows of the TPC to make sure they are recorded properly and don't lie in dead spots of the TPC. We also apply a cut on the $\chi^2$ of the TPC clusters to make sure the tracks were reconstructed properly in most of the cells. Then, we require a refit in the TPC and to the ITS. These refits already happen during the reconstruction of the tracks during the basic event reconstruction. In the ITS refit the tracks from the TPC are fitted to the hits in the ITS to get more track information from the whole detector. In the TPC refit the whole track is refitted from the innermost point in the detector to the TPC to make sure that the we get a good fit for the whole global track without any artefacts like kinks etc. Then we also make assumptions on the behaviour of the distance of closest approach (DCA) to the primary vertex in the $XY$ plane as a function of the track $p_T$ which should be below a certain threshold. Here, low-energy particles are allowed to be farther away from the primary vertex because the tracking does not work as well at low momenta. We also cut on the DCA in the $z$-direction where the transverse momentum of the particle obviously does not matter since the bigger part of the momentum in the $z$-direction comes from pre-collision kinematics. We then also cut on the $\chi^2$ value of the clusters in the ITS and the $\chi^2$ value we obtain from comparing the global track obtained from combining the TPC with the ITS track with the constrained TPC track. As before we also reject tracks with kinks because they correspond to a weak decay topology. We do not require the $\sigma$ to vertex option which when enabled requires the distance from the track to the vertex to be calculated in terms of the standard deviation $\sigma$. \\
@@ -342,4 +342,4 @@ For the PID in addition to the TPC we also used the time of flight (TOF) detecto
 \end{figure}
 
 
-\subsection{MC production}
+\subsection{MC Production}
